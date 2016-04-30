@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+pass_exec="`which pass`"
+
+if [ -n "$pass_exec" -a -x "$pass_exec" ]; then
+  PASSWORD_STORE_DIR=. "$pass_exec" $*
+else
+  echo "You need pass installed to use this script"
+fi
